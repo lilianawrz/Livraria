@@ -1,4 +1,5 @@
 <?php
+
 class BD
 {
     private $host = "localhost";
@@ -8,15 +9,16 @@ class BD
     private $senha = "";
     private $db_charset = "utf8";
 
+
     public function conn()
     {
         $conn = "mysql:host=$this->host;dbname=$this->dbname;port=$this->port";
+
         return new PDO(
             $conn,
             $this->usuario,
             $this->senha,
             [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES " . $this->db_charset]
-
         );
     }
 
@@ -27,6 +29,13 @@ class BD
         $st = $conn->prepare($sql);
         $st->execute([$dados['nome'], $dados['email'], $dados['telefone']]);
     }
+    public function inserirProduto($produto)
+    {
+        $conn = $this->conn();
+        $sql = "INSERT INTO produto (nome, quantidade, preco, descricao) VALUES(?,?,?,?);";
+        $st = $conn->prepare($sql);
+        $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
+    }
     public function atualizar($dados)
     {
         $id = $dados['id'];
@@ -35,10 +44,27 @@ class BD
         $st = $conn->prepare($sql);
         $st->execute([$dados['nome'], $dados['email'], $dados['telefone']]);
     }
+    public function atualizarProduto($produto)
+    {
+        $id = $produto['id'];
+        $conn = $this->conn();
+        $sql = "UPDATE produto SET nome=?, quantidade=? preco=?, descricao=? WHERE id= $id";
+        $st = $conn->prepare($sql);
+        $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
+    }
     public function select()
     {
         $conn = $this->conn();
         $sql = "SELECT * FROM usuario";
+        $st = $conn->prepare($sql);
+        $st->execute();
+
+        return $st->fetchAll(PDO::FETCH_CLASS);
+    }
+    public function selectProduto()
+    {
+        $conn = $this->conn();
+        $sql = "SELECT * FROM produto";
         $st = $conn->prepare($sql);
         $st->execute();
 
@@ -53,10 +79,26 @@ class BD
 
         return $st->fetchObject();
     }
+    public function buscarProduto($id)
+    {
+        $conn = $this->conn();
+        $sql = "SELECT * FROM produto WHERE id=? ";
+        $st = $conn->prepare($sql);
+        $st->execute([$id]);
+
+        return $st->fetchObject();
+    }
     public function deletar($id)
     {
         $conn = $this->conn();
         $sql = "DELETE FROM usuario WHERE id=? ";
+        $st = $conn->prepare($sql);
+        $st->execute([$id]);
+    }
+    public function deletarProduto($id)
+    {
+        $conn = $this->conn();
+        $sql = "DELETE FROM produtos WHERE id=? ";
         $st = $conn->prepare($sql);
         $st->execute([$id]);
     }
@@ -73,6 +115,20 @@ class BD
         $st->execute(["%" . $valor . "%"]);
 
         //retorna um vetor de objetosdo tipo classe
+        return $st->fetchAll(PDO::FETCH_CLASS);
+    }
+    public function pesquisarProduto($dados)
+    {
+        $campo = $dados['campo'];
+        $valor = $dados['valor'];
+
+        $conn = $this->conn();
+        $sql = "SELECT * FROM produto WHERE $campo LIKE ?;";
+        $st = $conn->prepare($sql);
+        // pesquisa o campo com % para usar o like do SQL
+        $st->execute(["%" . $valor . "%"]);
+
+        // retorna um vetor de objetos do tipo Produto
         return $st->fetchAll(PDO::FETCH_CLASS);
     }
     public function login($dados)

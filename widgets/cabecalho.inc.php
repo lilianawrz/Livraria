@@ -25,11 +25,17 @@
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="views\product\produtoForm.php">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="views\user\usuarioForm.php">Cad User</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="empresa.html">Sobre
                                 nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contato.html">Contato</a>
+                            <a class="nav-link" href="HTML Livraria\Principal\contato.html">Contato</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="troca.html">Politica de troca</a>

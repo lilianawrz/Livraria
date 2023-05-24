@@ -1,5 +1,5 @@
 <?php
-include '../Controle/BD.class.php';
+include '../models/BD.class.php';
 $conn = new BD();
 if (!empty($_POST)) {
     try {
@@ -35,7 +35,7 @@ if (!empty($_GET['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro usuário</title>
 </head>
 
 <body>
@@ -55,7 +55,6 @@ if (!empty($_GET['id'])) {
 
         <a href="usuarioList.php">Listar Dados</a>
     </form>
-
 </body>
 
 </html>
