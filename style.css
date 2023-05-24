@@ -1,0 +1,26 @@
+#nav {
+    background-color: rgb(247, 204, 125)
+}
+
+#narnia {
+    position: relative;
+    width: 190px;
+    padding: 5px;
+}
+
+.valor {
+    color: red;
+}
+
+button {
+    border-radius: 10px;
+
+}
+
+#qnt {
+    width: 20%;
+}
+
+p {
+    padding: 3px;
+}
