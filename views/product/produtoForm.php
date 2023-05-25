@@ -1,7 +1,8 @@
 <?php
-include '../models/BD.class.php';
+include '../BD.class.php';
 // include "views/widgets/cabecalho.inc.php";
 $conn = new BD();
+
 if (!empty($_POST)) {
     try {
         if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['nome'])) {

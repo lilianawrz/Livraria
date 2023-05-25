@@ -1,4 +1,4 @@
-<?php include "../models/BD.class.php";
+<?php include "../BD.class.php";
 
 $conn = new BD();
 if (!empty($_GET['id'])) {

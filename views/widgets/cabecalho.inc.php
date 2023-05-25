@@ -25,7 +25,7 @@
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views\product\produtoForm.php">Produtos</a>
+                            <a class="nav-link" href="views\product\produtoList.php">Produtos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="views\user\usuarioList.php">Cad User</a>
