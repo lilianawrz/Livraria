@@ -1,6 +1,6 @@
 <?php
 include '../models/BD.class.php';
-include "views/widgets/cabecalho.inc.php";
+// include "views/widgets/cabecalho.inc.php";
 $conn = new BD();
 if (!empty($_POST)) {
     try {

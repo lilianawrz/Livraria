@@ -28,7 +28,7 @@
                             <a class="nav-link" href="views\product\produtoForm.php">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views\user\usuarioForm.php">Cad User</a>
+                            <a class="nav-link" href="views\user\usuarioList.php">Cad User</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="empresa.html">Sobre
