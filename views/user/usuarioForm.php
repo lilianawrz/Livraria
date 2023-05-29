@@ -1,5 +1,7 @@
 <?php
-include '../BD.class.php';
+include '../../models/BD.class.php';
+include "../widgets/cabecalho.inc.php";
+
 $conn = new BD();
 
 if (!empty($_POST)) {
@@ -57,5 +59,4 @@ if (!empty($_GET['id'])) {
         <a href="usuarioList.php">Listar Dados</a>
     </form>
 </body>
-
-</html>
+<?php include "../widgets/rodape.inc.php"; ?>

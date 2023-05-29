@@ -1,15 +1,19 @@
 <?php
-include '../BD.class.php';
+include '../../models/BD.class.php';
 $conn = new BD();
-if (!empty($_GET['id'])) {
-    $conn->deletar($_GET['id']);
-    header("location:produtoList.php");
-}
+
 if (!empty($_POST)) {
-    $load = $conn->pesquisar($_POST);
-} else {
-    $load = $conn->select();
+    if (!empty($_GET['id'])) {
+        $conn->deletarProduto($_POST['id']);
+        header("location:produtoList.php");
+    }
+    // if (!empty($_POST)) {
+    //     $load = $conn->pesquisarProduto($_POST);
+    // }  
+    $load = $conn->selectProduto();
+
 }
+
 
 ?>
 
@@ -33,7 +37,7 @@ if (!empty($_POST)) {
             <option value="descricao">Descrição</option>
         </select>
         <label>Valor</label>
-        <input type="text" name="valor" placeholder="PesquisarProduto" />
+        <input type="text" name="valor" placeholder="Pesquisar produto" />
         <button type="submit">Buscar</button> <a href="produtoForm.php">Cadastrar</a>
     </form>
     <br>

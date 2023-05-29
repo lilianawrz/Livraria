@@ -1,4 +1,6 @@
-<?php include "../BD.class.php";
+<?php
+include '../../models/BD.class.php';
+include "../widgets/cabecalho.inc.php";
 
 $conn = new BD();
 if (!empty($_GET['id'])) {

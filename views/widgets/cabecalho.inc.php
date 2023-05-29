@@ -22,10 +22,13 @@
                 <div class="col-10 pt-1 nav-justified" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views\product\produtoList.php">Produtos</a>
+                            <a class="nav-link" href="views\product\produtoList.php">ProdLIST</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="views\product\produtoForm.php">ProdFORM</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="views\user\usuarioList.php">Cad User</a>

@@ -1,4 +1,4 @@
- <?php
+<?php
 class BD
 {
     private $host = "localhost";
@@ -30,7 +30,7 @@ class BD
     public function inserirProduto($produto)
     {
         $conn = $this->conn();
-        $sql = "INSERT INTO produto (nome, quantidade, preco, descricao) VALUES(?,?,?,?);";
+        $sql = "INSERT INTO produto (nome, quantidade, preco, descricao) VALUES (?, ?, ?, ?);";
         $st = $conn->prepare($sql);
         $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
     }
@@ -44,14 +44,14 @@ class BD
         $st = $conn->prepare($sql);
         $st->execute([$dados['nome'], $dados['email'], $dados['telefone']]);
     }
-    public function atualizarProduto($produto)
-    {
-        $id = $produto['id'];
-        $conn = $this->conn();
-        $sql = "UPDATE produto SET nome=?, quantidade=? preco=?, descricao=? WHERE id= $id";
-        $st = $conn->prepare($sql);
-        $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
-    }
+    // public function atualizarProduto($produto)
+    // {
+    //     $id = $produto['id'];
+    //     $conn = $this->conn();
+    //     $sql = "UPDATE produto SET nome=?, quantidade=?, preco=?, descricao=? WHERE id= $id";
+    //     $st = $conn->prepare($sql);
+    //     $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
+    // }
 
     public function select()
     {
@@ -84,7 +84,7 @@ class BD
     public function buscarProduto($id)
     {
         $conn = $this->conn();
-        $sql = "SELECT * FROM produto WHERE id=? ";
+        $sql = "SELECT * FROM produto WHERE id=? ;";
         $st = $conn->prepare($sql);
         $st->execute([$id]);
 

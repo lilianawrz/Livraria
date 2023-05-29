@@ -1,6 +1,6 @@
 <?php
-include '../BD.class.php';
-// include "views/widgets/cabecalho.inc.php";
+include '../../models/BD.class.php';
+
 $conn = new BD();
 
 if (!empty($_POST)) {
@@ -17,13 +17,17 @@ if (!empty($_POST)) {
         if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['descricao'])) {
             throw new Exception("Somente letras e espaços em branco são permitidos.");
         }
-        if (empty($_POST['id'])) {
-            $conn->inserir($_POST);
-        } else {
-            $conn->atualizar($_POST);
 
-        }
+
+        $conn->inserirProduto($_POST);
+        //else {
+        //     $conn->atualizarProduto($_POST);
+        // }
+
+
         header("location: produtoList.php");
+
+
     } catch (Exception $e) {
         $id = $_POST['id'];
         header("location: produtoForm.php?id=$id&erro=" . $e->getMessage());
@@ -31,8 +35,8 @@ if (!empty($_POST)) {
 
 }
 if (!empty($_GET['id'])) {
-    $data = $conn->buscar($_GET['id']);
-    //  var_dump($data);
+    $data = $conn->buscarProduto($_GET['id']);
+    // var_dump($data);
 }
 ?>
 
@@ -51,14 +55,15 @@ if (!empty($_GET['id'])) {
         <h3>Cadastro de produto</h3>
         <?php echo (!empty($_GET["erro"]) ? $_GET["erro"] : " ") ?>
         <input type="hidden" name="id" value=" <?php echo (!empty($data->id) ? $data->id : "") ?>"><br>
-        <label for="nome">Nome</label>
+        <label for="">Nome</label>
         <input type="text" name="nome" value=" <?php echo (!empty($data->nome) ? $data->nome : "") ?>"><br>
-        <label for="email">Quantidade</label>
-        <input type="email" name="quantidade"
-            value=" <?php echo (!empty($data->quantidade) ? $data->quantidade : "") ?>"><br>
-        <label for="nome">Preço</label>
-        <input type="number" name="preco" value=" <?php echo (!empty($data->preco) ? $data->preco : "") ?>"><br>
-        <label for="nome">Descrição</label>
+        <label for="">Quantidade</label>
+        <input type="number" name="quantidade"
+            value=" <?php echo (empty($data->quantidade) ? "" : $data->quantidade) ?>"><br>
+        <label for="">Preço</label>
+        <input type="number" name="preco" step="0.1"
+            value=" <?php echo (!empty($data->preco) ? $data->preco : "") ?>"><br>
+        <label for="">Descrição</label>
         <input type="text" name="descricao"
             value=" <?php echo (!empty($data->descricao) ? $data->descricao : "") ?>"><br>
         <button type="submit">
