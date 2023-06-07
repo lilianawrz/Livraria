@@ -2,20 +2,19 @@
 include '../../models/BD.class.php';
 $conn = new BD();
 
-if (!empty($_POST)) {
-    if (!empty($_GET['id'])) {
-        $conn->deletarProduto($_POST['id']);
-        header("location:produtoList.php");
+    if(!empty($_GET['id'])){
+        $conn->deletarProduto($_GET['id']);
+        header("location: produtoList.php");
     }
-    // if (!empty($_POST)) {
-    //     $load = $conn->pesquisarProduto($_POST);
-    // }  
-    $load = $conn->selectProduto();
 
-}
-
+    if(!empty($_POST)){
+       $load = $conn->pesquisarProduto($_POST);
+    } else {
+       $load = $conn->selectProduto();
+    } 
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

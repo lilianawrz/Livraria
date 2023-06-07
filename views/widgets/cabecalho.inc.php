@@ -10,6 +10,11 @@
 </head>
 
 <body>
+
+    <?php
+
+    $dirName = "/Livraria";
+    ?>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-yellow" id="nav">
             <div class="container-fluid">
@@ -24,8 +29,10 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="views\product\produtoList.php">ProdLIST</a>
+                            <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\product\produtoList.php">ProdLIST</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="views\product\produtoForm.php">ProdFORM</a>

@@ -5,7 +5,7 @@ $conn = new BD();
 
 if (!empty($_POST)) {
     try {
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['nome'])) {
+       if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['nome'])) {
             throw new Exception("Somente letras e espaços em branco são permitidos.");
         }
         if (!is_numeric($_POST['quantidade'])) {
@@ -18,28 +18,23 @@ if (!empty($_POST)) {
             throw new Exception("Somente letras e espaços em branco são permitidos.");
         }
 
-
-        $conn->inserirProduto($_POST);
-        //else {
-        //     $conn->atualizarProduto($_POST);
-        // }
-
-
-        header("location: produtoList.php");
-
-
-    } catch (Exception $e) {
-        $id = $_POST['id'];
-        header("location: produtoForm.php?id=$id&erro=" . $e->getMessage());
-    }
-
-}
-if (!empty($_GET['id'])) {
-    $data = $conn->buscarProduto($_GET['id']);
-    // var_dump($data);
-}
+        if(empty($_POST['id'])){
+            $conn->inserirProduto($_POST);
+          } else {
+            $conn->atualizarProduto($_POST);
+          }
+          header("location: produtoList.php");
+  
+      } catch (Exception $e){
+          $id = $_POST['id'];
+          header("location: produtoForm.php?id=$id&erro=".$e->getMessage());
+      }
+   }
+   if(!empty($_GET['id'])){
+     $data = $conn->buscarProduto($_GET['id']);
+     //var_dump($data);
+   }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

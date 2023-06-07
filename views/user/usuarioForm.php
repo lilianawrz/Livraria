@@ -12,9 +12,10 @@ if (!empty($_POST)) {
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             throw new Exception("Formato de e-mail inválido.");
         }
+
         if (empty($_POST['id'])) {
             $conn->inserir($_POST);
-        } else {
+        } else if (!empty($_POST['id'])) {
             $conn->atualizar($_POST);
 
         }
@@ -45,13 +46,13 @@ if (!empty($_GET['id'])) {
     <form action="usuarioForm.php" method="post">
         <h3>Formulário Contato</h3>
         <?php echo (!empty($_GET["erro"]) ? $_GET["erro"] : " ") ?>
-        <input type="hidden" name="id" value=" <?php echo (!empty($data->id) ? $data->id : "") ?>"><br>
+        <input type="hidden" name="id" value="<?php echo (!empty($data->id) ? $data->id : "") ?>"><br>
         <label for="nome">Nome</label>
-        <input type="text" name="nome" value=" <?php echo (!empty($data->nome) ? $data->nome : "") ?>"><br>
+        <input type="text" name="nome" value="<?php echo (!empty($data->nome) ? $data->nome : "") ?>"><br>
         <label for="email">Email</label>
-        <input type="email" name="email" value=" <?php echo (!empty($data->email) ? $data->email : "") ?>"><br>
+        <input type="email" name="email" value="<?php echo (!empty($data->email) ? $data->email : "") ?>"><br>
         <label for="nome">Telefone</label>
-        <input type="text" name="telefone" value=" <?php echo (!empty($data->telefone) ? $data->telefone : "") ?>"><br>
+        <input type="text" name="telefone" value="<?php echo (!empty($data->telefone) ? $data->telefone : "") ?>"><br>
         <button type="submit">
             <?php echo (empty($_GET['id']) ? "Cadastrar" : "Atualizar") ?>
         </button> <br>

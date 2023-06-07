@@ -25,6 +25,7 @@ class BD
         $conn = $this->conn();
         $sql = "INSERT INTO usuario (nome, email, telefone) VALUES (?, ?, ?);";
         $st = $conn->prepare($sql);
+
         $st->execute([$dados['nome'], $dados['email'], $dados['telefone']]);
     }
     public function inserirProduto($produto)
@@ -44,14 +45,14 @@ class BD
         $st = $conn->prepare($sql);
         $st->execute([$dados['nome'], $dados['email'], $dados['telefone']]);
     }
-    // public function atualizarProduto($produto)
-    // {
-    //     $id = $produto['id'];
-    //     $conn = $this->conn();
-    //     $sql = "UPDATE produto SET nome=?, quantidade=?, preco=?, descricao=? WHERE id= $id";
-    //     $st = $conn->prepare($sql);
-    //     $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
-    // }
+    public function atualizarProduto($produto)
+    {
+        $id = $produto['id'];
+        $conn = $this->conn();
+        $sql = "UPDATE produto SET nome=?, quantidade=?, preco=?, descricao=? WHERE id= $id";
+        $st = $conn->prepare($sql);
+        $st->execute([$produto['nome'], $produto['quantidade'], $produto['preco'], $produto['descricao']]);
+    }
 
     public function select()
     {
