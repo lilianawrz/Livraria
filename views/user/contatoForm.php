@@ -1,37 +1,25 @@
 <?php
-include '../../models/BD.class.php';
-include "../widgets/cabecalho.inc.php";
-
-$conn = new BD();
+include '../../controllers/contatoController.php';
+include '../widgets/header.php';
+session_start();
+$contato = new contatoController();
 
 if (!empty($_POST)) {
-    try {
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['nome'])) {
-            throw new Exception("Somente letras e espaços em branco são permitidos.");
-        }
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            throw new Exception("Formato de e-mail inválido.");
-        }
 
-        if (empty($_POST['id'])) {
-            $conn->inserir($_POST);
-        } else if (!empty($_POST['id'])) {
-            $conn->atualizar($_POST);
-
-        }
-        header("location: usuarioList.php");
-    } catch (Exception $e) {
-        $id = $_POST['id'];
-        header("location: usuarioForm.php?id=$id&erro=" . $e->getMessage());
+    if (empty($_POST['id'])) {
+        $contato->inserir($_POST);
+    } else {
+        $contato->atualizar($_POST);
     }
+    header("location: " . $_SESSION['url']);
+
 
 }
 if (!empty($_GET['id'])) {
-    $data = $conn->buscar($_GET['id']);
-    //  var_dump($data);
+    $data = $contato->buscar($_GET['id']);
+    //var_dump($data);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,13 +27,15 @@ if (!empty($_GET['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro usuário</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <form action="usuarioForm.php" method="post">
+    <form action="ContatoForm.php" method="post">
         <h3>Formulário Contato</h3>
-        <?php echo (!empty($_GET["erro"]) ? $_GET["erro"] : " ") ?>
+        <p style="color:red">
+            <?php echo (!empty($_SESSION["msg"]) ? $_SESSION["msg"] : "") ?><br>
+        </p>
         <input type="hidden" name="id" value="<?php echo (!empty($data->id) ? $data->id : "") ?>"><br>
         <label for="nome">Nome</label>
         <input type="text" name="nome" value="<?php echo (!empty($data->nome) ? $data->nome : "") ?>"><br>

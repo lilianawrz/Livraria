@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,20 +33,25 @@
 
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\product\produtoList.php">ProdLIST</a>
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\product\produtoList.php">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views\product\produtoForm.php">ProdFORM</a>
+                            <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\product\produtoForm.php">Cadastro
+                                de produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="views\user\usuarioList.php">Cad User</a>
+                            <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\user\usuarioList.php">Cad
+                                User</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="empresa.html">Sobre
                                 nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="HTML Livraria\Principal\contato.html">Contato</a>
+                            <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\HTML Livraria\Principal\contato.html">Contato</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="troca.html">Politica de troca</a>
