@@ -1,5 +1,5 @@
 <?php
-include '../../controllers/usuarioController.php';
+include '../../models/BD.class.php';
 include '../../views/widgets/header.php';
 $conn = new BD();
 

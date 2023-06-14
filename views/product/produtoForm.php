@@ -1,38 +1,22 @@
 <?php
 include '../../models/BD.class.php';
-include "../widgets/cabecalho.inc.php";
-
-$conn = new BD();
+include "../widgets/header.php";
+session_start();
+$produto = new ProdutoController();
 
 if (!empty($_POST)) {
-    try {
-        /* if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['nome'])) {
-             throw new Exception("Somente letras e espaços em branco são permitidos.");
-         }
-         if (!is_numeric($_POST['quantidade'])) {
-             throw new Exception("O valor deve ser numérico.");
-         }
-         if (!is_numeric($_POST['preco'])) {
-             throw new Exception("O valor deve ser numérico.");
-         }
-         if (!preg_match("/^[a-zA-Z-' ]*$/", $_POST['descricao'])) {
-               throw new Exception("Somente letras e espaços em branco são permitidos.");
-           }*/
 
-        if (empty($_POST['id'])) {
-            $conn->inserirProduto($_POST);
-        } else {
-            $conn->atualizarProduto($_POST);
-        }
-        header("location: produtoList.php");
-
-    } catch (Exception $e) {
-        $id = $_POST['id'];
-        header("location: produtoForm.php?id=$id&erro=" . $e->getMessage());
+    if (empty($_POST['id'])) {
+        $produto->inserir($_POST);
+    } else {
+        $produto->atualizar($_POST);
     }
+    header("location: " . $_SESSION['url']);
+
+
 }
 if (!empty($_GET['id'])) {
-    $data = $conn->buscarProduto($_GET['id']);
+    $data = $produto->buscar($_GET['id']);
     //var_dump($data);
 }
 ?>

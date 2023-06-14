@@ -1,33 +1,24 @@
 <?php
-include '../../models/BD.class.php';
-include "../widgets/cabecalho.inc.php";
-$conn = new BD();
+include '../../controllers/produtoController.php';
+include "../widgets/header.php";
+session_start();
+$produto = new ProdutoController();
 
 if (!empty($_GET['id'])) {
-    $conn->deletarProduto($_GET['id']);
-    header("location: produtoList.php");
+    $produto->deletar($_GET['id']);
+    header("location: " . $_SESSION['url']);
 }
 
 if (!empty($_POST)) {
-    $load = $conn->pesquisarProduto($_POST);
+    $load = $produto->pesquisar($_POST);
 } else {
-    $load = $conn->selectProduto();
+    $load = $produto->select();
 }
 
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Listagem</title>
-</head>
-
+<html>
 <body>
+
     <h3>Listagem de produtos</h3>
     <form action="produtoList.php" method="post">
         <select name="campo">

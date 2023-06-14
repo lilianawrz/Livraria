@@ -1,10 +1,10 @@
 <?php
 include "../models/BD.class.php";
 
-class ContatoController
+class ProdutoController
 {
     private $model;
-    private $table = "usuario";
+    private $table = "produto";
     public function __construct()
     {
         $this->model = new BD();
@@ -24,12 +24,12 @@ class ContatoController
 
             $this->model->inserir($this->table, $dados);
 
-            $_SESSION['url'] = "contatoList.php";
+            $_SESSION['url'] = "produtoList.php";
             $_SESSION['msg'] = "Registro salvo com sucesso";
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'contatoForm.php';
+            $_SESSION['url'] = 'produtoForm.php';
             $_SESSION['msg'] = $e->getMessage();
         }
     }
@@ -47,12 +47,12 @@ class ContatoController
 
             $this->model->atualizar($this->table, $dados);
 
-            $_SESSION['url'] = "contatoList.php";
+            $_SESSION['url'] = "produtoList.php";
             $_SESSION['msg'] = "Registro atualizado com sucesso";
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'contatoForm.php?id=' . $dados['id'];
+            $_SESSION['url'] = 'produtoForm.php?id=' . $dados['id'];
             $_SESSION['msg'] = $e->getMessage();
         }
     }

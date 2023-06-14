@@ -2,7 +2,7 @@
 include '../../controllers/contatoController.php';
 include '../widgets/header.php';
 session_start();
-$contato = new contatoController();
+$contato = new ContatoController();
 
 if (!empty($_POST)) {
 
@@ -31,7 +31,7 @@ if (!empty($_GET['id'])) {
 </head>
 
 <body>
-    <form action="ContatoForm.php" method="post">
+    <form action="contatoForm.php" method="post">
         <h3>Formulário Contato</h3>
         <p style="color:red">
             <?php echo (!empty($_SESSION["msg"]) ? $_SESSION["msg"] : "") ?><br>
@@ -47,7 +47,7 @@ if (!empty($_GET['id'])) {
             <?php echo (empty($_GET['id']) ? "Cadastrar" : "Atualizar") ?>
         </button> <br>
 
-        <a href="usuarioList.php">Listar Dados</a>
+        <a href="contatoList.php">Listar Dados</a>
     </form>
 </body>
 <?php include "../widgets/rodape.inc.php"; ?>
