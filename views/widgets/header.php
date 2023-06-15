@@ -42,7 +42,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\user\usuarioList.php">Cad
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\contact\contatoForm.php">Cad
                                 User</a>
                         </li>
                         <li class="nav-item">

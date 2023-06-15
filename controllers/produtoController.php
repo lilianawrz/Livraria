@@ -1,5 +1,5 @@
 <?php
-include "../models/BD.class.php";
+include "../../models/BD.class.php";
 
 class ProdutoController
 {

@@ -3,6 +3,7 @@ include '../../controllers/produtoController.php';
 include "../widgets/header.php";
 session_start();
 $produto = new ProdutoController();
+$load = 0; 
 
 if (!empty($_GET['id'])) {
     $produto->deletar($_GET['id']);

@@ -1,5 +1,5 @@
 <?php
-include "../models/BD.class.php";
+include "../../models/BD.class.php";
 
 class ContatoController
 {
@@ -61,8 +61,7 @@ class ContatoController
         $this->model->select($this->table);
     }
     public function pesquisar($dados)
-    {
-        $this->model->pesquisar($this->table, $dados);
+    {        $this->model->pesquisar($this->table, $dados);
     }
     public function deletar($id)
     {
