@@ -17,11 +17,7 @@ class ProdutoController
             if (!preg_match("/^[a-zA-Z-' ]*$/", $dados['nome'])) {
                 throw new Exception(" Somente letras e espaços em branco são permitidos. ");
             }
-
-            if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
-                throw new Exception(" Formato de e-mail inválido. ");
-            }
-
+            
             $this->model->inserir($this->table, $dados);
 
             $_SESSION['url'] = "produtoList.php";

@@ -58,10 +58,11 @@ class ContatoController
     }
     public function select($dados)
     {
-        $this->model->select($this->table);
+        $this->model->select($this->table, $dados);
     }
     public function pesquisar($dados)
-    {        $this->model->pesquisar($this->table, $dados);
+    {
+        $this->model->pesquisar($this->table, $dados);
     }
     public function deletar($id)
     {

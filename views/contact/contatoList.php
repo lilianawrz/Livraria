@@ -4,7 +4,7 @@ include "../widgets/header.php";
 //include "../Util.php";
 
 session_start();
-//verificarLogin();
+verificarLogin();
 
 $contato = new ContatoController();
 
