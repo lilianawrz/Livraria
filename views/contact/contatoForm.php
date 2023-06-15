@@ -40,4 +40,4 @@ if (!empty($_GET['id'])) {
     <a href="contatoList.php">Listar Dados</a>
 </form>
 
-<?php include "../widgets/rodape.inc.php"; ?>
+<?php include "../widgets/rodape.php"; ?>

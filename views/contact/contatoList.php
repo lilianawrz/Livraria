@@ -4,7 +4,7 @@ include "../widgets/header.php";
 //include "../Util.php";
 
 session_start();
-verificarLogin();
+// verificarLogin();
 
 $contato = new ContatoController();
 
@@ -25,8 +25,10 @@ if (!empty($_GET['msg']) || $_GET['msg'] == 0) {
 }
 
 ?>
+<p>
 Olá
 <?php echo $_SESSION['nome'] ?>, seja bem vindo! <a href="view/user/login.php?sair=1"> Sair </a>
+</p>
 
 <h3>Listagem Contatos</h3>
 <p style="color:red">
@@ -64,4 +66,4 @@ Olá
     }
     ?>
 </table>
-<?php include "./widgets/rodape.php"; ?>
+<?php include "../widgets/rodape.php"; ?>

@@ -17,7 +17,7 @@ class ProdutoController
             if (!preg_match("/^[a-zA-Z-' ]*$/", $dados['nome'])) {
                 throw new Exception(" Somente letras e espaços em branco são permitidos. ");
             }
-            
+
             $this->model->inserir($this->table, $dados);
 
             $_SESSION['url'] = "produtoList.php";
@@ -52,7 +52,7 @@ class ProdutoController
             $_SESSION['msg'] = $e->getMessage();
         }
     }
-    public function select($dados)
+    public function select()
     {
         $this->model->select($this->table);
     }

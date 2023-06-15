@@ -1,6 +1,5 @@
 <?php
-include '../../controllers/usuarioController.php';
-include '../widgets/header.php';
+include '../../models/BD.class.php';
 $conn = new BD();
 
 if (!empty($_POST)) {
@@ -50,7 +49,7 @@ if (!empty($_GET['id'])) {
 </head>
 
 <body>
-    <form action="registrarUsuarioForm.php" method="post">
+    <form action="RegistrarUsuarioForm.php" method="post">
         <h3>Formulário Registrar Usuário</h3>
         <?php echo (!empty($_GET["erro"]) ? $_GET["erro"] : "") ?><br>
         <label for="">Nome</label>

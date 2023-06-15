@@ -56,9 +56,9 @@ class ContatoController
             $_SESSION['msg'] = $e->getMessage();
         }
     }
-    public function select($dados)
+    public function select()
     {
-        $this->model->select($this->table, $dados);
+        $this->model->select($this->table);
     }
     public function pesquisar($dados)
     {

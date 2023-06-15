@@ -1,11 +1,24 @@
 <?php
-include "../BD.class.php";
+include "../../models/BD.class.php";
 
 $conn = new BD();
 session_start();
 
 if (!empty($_POST)) {
-    header("location:" . $_SESSION[$url]);
+    try {
+        $usuario = $conn->login($_POST);
+
+        if ($usuario) {
+            $_SESSION["login"] = $_POST['login'];
+
+            $url = "main.php";
+        }
+    } catch (Exception $e) {
+        $login = $_POST['login'];
+        $msg = "O login ou senha esta errado.Por favor, tente novamente.";
+        $url = "login.php?login=$login&erro=" . $msg;
+    }
+    header("location: $url");
 } elseif (!empty($_GET['sair'])) {
 }
 ?>
