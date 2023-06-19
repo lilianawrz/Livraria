@@ -1,7 +1,7 @@
 <div class="col-md-2 p-4">
     <div style="padding-top: 0.5rem">
         <div class="p4 mb-3 rounded">
-            <h4 class="fst-italic">#</h4>
+            <h4>Filtros</h4>
             <aside>
                 <div>
                     <label for="">Idioma</label>

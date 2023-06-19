@@ -19,15 +19,18 @@ if (!empty($_POST)) {
 } else {
     $load = $contato->select();
 }
+//var_dump($load);
+//exit;
 
-if (!empty($_GET['msg']) || $_GET['msg'] == 0) {
+if (!empty($_GET['msg']) || $_SESSION['msg'] == 0) {
     $_SESSION["msg"] = "";
 }
 
 ?>
 <p>
-Olá
-<?php echo $_SESSION['nome'] ?>, seja bem vindo! <a href="view/user/login.php?sair=1"> Sair </a>
+    Olá
+    <?php echo $_SESSION['nome'] ?>, seja bem vindo! <a class="btn btn-warning" href="view/user/login.php?sair=1"
+        role="button"> Sair </a>
 </p>
 
 <h3>Listagem Contatos</h3>
@@ -42,17 +45,17 @@ Olá
     </select>
     <label>Valor</label>
     <input type="text" name="valor" placeholder="Pesquisar" />
-    <button type="submit">Buscar</button>
-    <a href="contatoForm.php?msg=0">Cadastrar</a><br><br>
+    <button class="btn btn-warning" type="submit">Buscar</button>
+    <a class="btn btn-warning" href="contatoForm.php?msg=0" role="button">Cadastrar</a><br><br>
 </form>
 
-<table border="1">
+<table class="table">
     <tr>
-        <th>Nome</th>
-        <th>Telefone</th>
-        <th>Email</th>
-        <th></th>
-        <th></th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Email</th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
     </tr>
     <?php
     foreach ($load as $item) {
@@ -60,7 +63,7 @@ Olá
         echo "<td>" . $item->nome . "</td>";
         echo "<td>" . $item->telefone . "</td>";
         echo "<td>" . $item->email . "</td>";
-        echo "<td><a href='contatoForm.php?id=$item->id'>Editar</a></td>";
+        echo "<td><a  href='contatoForm.php?id=$item->id'>Editar</a></td>";
         echo "<td><a onclick='return confirm(\"Deseja Excluir? \")' href='contatoList.php?id=$item->id'>Deletar</a></td>";
         echo "<tr>";
     }

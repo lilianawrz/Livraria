@@ -54,11 +54,11 @@ class ProdutoController
     }
     public function select()
     {
-        $this->model->select($this->table);
+        return $this->model->select($this->table);
     }
     public function pesquisar($dados)
     {
-        $this->model->pesquisar($this->table, $dados);
+        return $this->model->pesquisar($this->table, $dados);
     }
     public function deletar($id)
     {

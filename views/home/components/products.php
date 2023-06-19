@@ -1,4 +1,4 @@
-<section>
+<section style="text-align: justify;">
     <h2 class="blog-post-title text-center" id="post01">Mais vendidos</h2>
     <div class="row">
         <div class="col-sm p-2">
@@ -11,7 +11,7 @@
                         crônicas de Nárnia' transcenderam o gênero da fantasia
                         para se tornar parte do cânone da
                         literaturaclássica.</p>
-                    <a href="narnia.html" class="btn btn-primary">Comprar</a>
+                    <a href="narnia.html" class="btn btn-warning">Comprar</a>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                     <p class="card-text">O mundo vai acabar em um sábado. No
                         próximo sábado, para falar a verdade. Pouco antes da
                         hora do jantar.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <a href="#" class="btn btn-warning">Comprar</a>
                 </div>
             </div>
         </div>
@@ -37,9 +37,8 @@
                         Quebert</h6>
                     <p class="card-text">A verdade sobre
                         o caso Harry Quebert, se tornou um best-seller na
-                        Europa, alçando o jovem autor à categoria de fenômeno
-                        literário.</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                        Europa e o autor um fenômeno literário.</p>
+                    <a href="#" class="btn btn-warning">Comprar</a>
                 </div>
             </div>
         </div>
@@ -51,7 +50,7 @@
                     <p class="card-text">“Mas não estava em outra época e
                         lugar, e nada daquilo era normal. Trazia a
                         fotografia dela consigo há mais de cinco anos.”</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <a href="#" class="btn btn-warning">Comprar</a>
                 </div>
             </div>
         </div>

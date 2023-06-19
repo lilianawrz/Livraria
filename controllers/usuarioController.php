@@ -1,7 +1,7 @@
 <?php
 include "../../models/BD.class.php";
 
-class ContatoController
+class UsuarioController
 {
     private $model;
     private $table = "usuario";
@@ -24,12 +24,12 @@ class ContatoController
 
             $this->model->inserir($this->table, $dados);
 
-            $_SESSION['url'] = "contatoList.php";
+            $_SESSION['url'] = "login.php";
             $_SESSION['msg'] = "Registro salvo com sucesso";
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'contatoForm.php';
+            $_SESSION['url'] = 'RegistrarUsuarioForm.php';
             $_SESSION['msg'] = $e->getMessage();
         }
     }
@@ -47,12 +47,12 @@ class ContatoController
 
             $this->model->atualizar($this->table, $dados);
 
-            $_SESSION['url'] = "contatoList.php";
+            $_SESSION['url'] = "login.php";
             $_SESSION['msg'] = "Registro atualizado com sucesso";
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'contatoForm.php?id=' . $dados['id'];
+            $_SESSION['url'] = 'RegistrarUsuarioForm.php?id=' . $dados['id'];
             $_SESSION['msg'] = $e->getMessage();
         }
     }

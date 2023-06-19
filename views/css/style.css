@@ -14,13 +14,17 @@
 
 button {
     border-radius: 10px;
+    color: rgb(247, 204, 125);
 
 }
-
+a{
+    text-decoration:none;
+}
 #qnt {
     width: 20%;
 }
 
 p {
     padding: 3px;
+    text-align:justify;
 }

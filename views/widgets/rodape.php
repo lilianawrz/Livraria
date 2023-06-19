@@ -9,6 +9,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contato</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="empresa.html">Sobre
+                        nós</a>
+                </li>
             </ul>
         </div>
         <div class="col-md-4 offset-md-4">
