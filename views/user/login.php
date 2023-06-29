@@ -15,8 +15,6 @@ if (!empty($_POST)) {
 $dados = $_SESSION['dados'];
 ?>
 
-
-
 <h3>Login</h3>
 <form action="login.php" method="post">
     <p style="color:red">
