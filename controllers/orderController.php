@@ -1,10 +1,10 @@
 <?php
 include "../../models/BD.class.php";
 
-class ProdutoController
+class OrderController
 {
     private $model;
-    private $table = "produto";
+    private $table = "pedido";
     public function __construct()
     {
         $this->model = new BD();
@@ -20,15 +20,14 @@ class ProdutoController
 
             $this->model->inserir($this->table, $dados);
 
-            $_SESSION['url'] = "produtoList.php";
+            $_SESSION['url'] = "orderList.php";
             $_SESSION['msg'] = "Registro salvo com sucesso";
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'produtoForm.php';
+            $_SESSION['url'] = 'orderForm.php';
             $_SESSION['msg'] = $e->getMessage();
         }
-
     }
     public function atualizar($dados)
     {
@@ -38,18 +37,14 @@ class ProdutoController
                 throw new Exception(" Somente letras e espaços em branco são permitidos. ");
             }
 
-            if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
-                throw new Exception(" Formato de e-mail inválido. ");
-            }
-
             $this->model->atualizar($this->table, $dados);
 
-            $_SESSION['url'] = "produtoList.php";
+            $_SESSION['url'] = "orderList.php";
             $_SESSION['msg'] = "Registro atualizado com sucesso";
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'produtoForm.php?id=' . $dados['id'];
+            $_SESSION['url'] = 'orderForm.php?id=' . $dados['id'];
             $_SESSION['msg'] = $e->getMessage();
         }
     }

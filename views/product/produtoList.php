@@ -22,28 +22,43 @@ if (!empty($_POST)) {
         <div class="col-md-10 p-4">
             <div style="padding-top: 10px">
                 <h3>Listagem de produtos</h3>
-                <form action="produtoList.php" method="post">
-                    <select name="campo" class="form-control">
-                        <option value="nome">Nome</option>
-                        <option value="quantidade">Quantidade</option>
-                        <option value="preco">Preço</option>
-                        <option value="descricao">Descrição</option>
-                    </select>
-                    <label>Valor</label>
-                    <input type="text" name="valor" class="form-control" placeholder="Pesquisar produto" />
-                    <br>
-                    <button type="submit" class="btn btn-warning">Buscar</button> <a class="btn btn-warning"
-                        href="produtoForm.php">Cadastrar</a>
-                </form>
                 <br>
-                <table class="table">
+                <form action="produtoList.php" method="post" class="form-inline">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <select name="campo" class="form-control">
+                                <option value="nome">Nome</option>
+                                <option value="quantidade">Quantidade</option>
+                                <option value="preco">Preço</option>
+                                <option value="descricao">Descrição</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <input type="text" name="valor" class="form-control mr-sm-2"
+                                placeholder="Pesquisar produto" />
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-warning">Buscar</button>
+                            <a class="btn btn-warning" href="produtoForm.php">Cadastrar</a>
+                        </div>
+                </form>
+            </div>
+            </form>
+            <br>
+            <table class="table">
+                <thead class="table-warning">
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">Imagem</th>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Preço</th>
                         <th scope="col">Descrição</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
+                </thead>
+                <tbody>
                     <?php
                     foreach ($load as $item) {
                         echo "<tr>";
@@ -59,24 +74,10 @@ if (!empty($_POST)) {
                     }
 
                     ?>
-                </table>
-
-                <div class="col-sm p-2">
-                    <div class="card" style="width: 200px">
-                        <img src="\Img\belasmaldi.jpg" class="card-img-top" alt="..." height="250px">
-                        <div class="card-body">
-                            <h6 class="card-title">
-                            </h6>
-                            <p class="card-text">O mundo vai acabar em um sábado. No
-                                próximo sábado, para falar a verdade. Pouco antes da
-                                hora do jantar.</p>
-                            <a href="#" class="btn btn-warning">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                </tbody>
+            </table>
         </div>
+    </div>
     </div>
 </main>
 

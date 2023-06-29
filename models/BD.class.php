@@ -122,7 +122,7 @@ class BD
         return $st->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function login($dados)
+    public function login($nome_tabela, $dados)
     {
         $conn = $this->conn();
         $sql = "SELECT * FROM usuario WHERE login=? ;";

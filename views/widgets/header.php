@@ -45,6 +45,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\order\orderForm.php">Cadastro
+                                de pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
                                 href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\contact\contatoForm.php">Contato</a>
                         </li>
                         <li class="nav-item">

@@ -27,9 +27,9 @@ if (!empty($_GET['id'])) {
                 <form action="contatoForm.php" method="post">
                     <div class="mb-3">
                         <h3>Formulário de contato</h3>
-                        <p style="color:red">
+                        <div class="alert alert-warning" role="alert">
                             <?php echo (!empty($_SESSION["msg"]) ? $_SESSION["msg"] : "") ?><br>
-                        </p>
+                        </div>
                         <input type="hidden" name="id" value="<?php echo (!empty($data->id) ? $data->id : "") ?>">
                     </div>
                     <div class="mb-3">
@@ -50,13 +50,17 @@ if (!empty($_GET['id'])) {
                             value="<?php echo (!empty($data->telefone) ? $data->telefone : "") ?>"
                             placeholder="Digite seu telefone">
                     </div>
-                    <button type="submit" class="btn btn-warning">
-                        <?php echo (empty($_GET['id']) ? "Cadastrar" : "Atualizar") ?>
-                    </button>
-                    <a class="btn btn-warning" href="contatoList.php" role="button">Listar Dados</a>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-warning">
+                                <?php echo (empty($_GET['id']) ? "Cadastrar" : "Atualizar") ?>
+                            </button>
+                        </div>
+                        <div class="col-sm-3">
+                            <a class="btn btn-warning" href="contatoList.php" role="button">Listar Dados</a>
 
-                    <br>
-                    <br>
+                        </div>
+                    </div>
                 </form>
 
                 <h3>Localização</h3><br>

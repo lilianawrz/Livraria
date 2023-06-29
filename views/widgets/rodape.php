@@ -1,4 +1,4 @@
-<footer class="container">
+<footer class="container" style="bottom:0">
     <div class="row">
         <div class="col-md-4">
             <ul class="nav">
