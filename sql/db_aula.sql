@@ -19,6 +19,20 @@
 CREATE DATABASE IF NOT EXISTS `db_aula` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_aula`;
 
+-- Copiando estrutura para tabela db_aula.pedido
+CREATE TABLE IF NOT EXISTS `pedido` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(250) NOT NULL,
+  `valor` float NOT NULL,
+  `data` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Copiando dados para a tabela db_aula.pedido: ~2 rows (aproximadamente)
+REPLACE INTO `pedido` (`id`, `nome`, `valor`, `data`) VALUES
+	(1, 'Liliana Wrzesinski', 4800, '2023-06-29'),
+	(2, 'Gabriel Riboli', 1000, '2023-06-29');
+
 -- Copiando estrutura para tabela db_aula.produto
 CREATE TABLE IF NOT EXISTS `produto` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -30,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela db_aula.produto: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela db_aula.produto: ~2 rows (aproximadamente)
 REPLACE INTO `produto` (`id`, `nome`, `imagem`, `quantidade`, `preco`, `descricao`) VALUES
 	(1, ' A verdade sobre o caso Harry Quebert', _binary 0x44657369676e2073656d206e6f6d65202831292e706e67, 1, 20, ' Mistério'),
 	(5, 'Harry Quebert', _binary 0x6861727279512e6a7067, 1, 25, 'O mundo vai acabar em um sábado. No próximo sábado, para falar a verdade. Pouco antes da hora do jantar.');
@@ -46,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Copiando dados para a tabela db_aula.usuario: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela db_aula.usuario: ~3 rows (aproximadamente)
 REPLACE INTO `usuario` (`id`, `nome`, `telefone`, `email`, `login`, `senha`) VALUES
 	(1, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', 'admin', '1234'),
 	(30, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', NULL, NULL),
