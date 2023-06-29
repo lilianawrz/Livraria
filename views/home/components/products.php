@@ -1,10 +1,11 @@
+<br>
 <section style="text-align: justify;">
-    <h2 class="blog-post-title text-center" id="post01">Mais vendidos</h2>
+    <h3 class="blog-post-title text-center" id="post01">Mais vendidos</h3>
+    <br>
     <div class="row">
         <div class="col-sm p-2">
             <div class="card" style="width: 200px">
-                <img src="https://m.media-amazon.com/images/I/71yJLhQekBL.jpg" class="card-img-top" alt="..."
-                    height="250px">
+                <img src="views\img\narnia.jpg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">As crônicas de Narnia</h6>
                     <p class="card-text">Nos últimos cinqüenta anos, 'As
@@ -15,10 +16,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-sm p-2">
             <div class="card" style="width: 200px">
-                <img src="\Img\belasmaldi.jpg" class="card-img-top" alt="..." height="250px">
+                <img src="views\img\goodOmens.jpeg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">Good Omens: Belas Maldições</h6>
                     <p class="card-text">O mundo vai acabar em um sábado. No
@@ -28,10 +28,9 @@
                 </div>
             </div>
         </div>
-
         <div class="col-sm p-2">
             <div class="card" style="width:200px">
-                <img src="\Img\harryQ.jpg" class="card-img-top" alt="..." height="250px">
+                <img src="views\img\harryQuebert.jpeg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">A verdade sobre o caso Harry
                         Quebert</h6>
@@ -44,7 +43,7 @@
         </div>
         <div class="col-sm p-2">
             <div class="card" style="width: 200px">
-                <img src="\Img\sorte.jpeg" class="card-img-top" alt="..." height="250px">
+                <img src="views\img\homemDeSorte.jpg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">Um homem de sorte</h6>
                     <p class="card-text">“Mas não estava em outra época e
@@ -56,3 +55,4 @@
         </div>
     </div>
 </section>
+<br>

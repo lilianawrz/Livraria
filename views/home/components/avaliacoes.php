@@ -1,5 +1,6 @@
 <section style="text-align: justify;">
-    <h4>Avaliações dos clientes</h4>
+    <h3 class="blog-post-title text-center">Avaliações dos clientes</h3>
+    <br>
     <p>"Adoro essa livraria! O atendimento é excelente e sempre
         encontro os livros que procuro. Além disso, o ambiente é
         aconchegante e inspirador, o que me faz querer passar horas

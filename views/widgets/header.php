@@ -33,11 +33,6 @@
                             <a class="nav-link active" aria-current="page"
                                 href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\index.php">Home</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\product\produtoList.php">Produtos</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\product\produtoForm.php">Cadastro
@@ -52,6 +47,16 @@
                             <a class="nav-link"
                                 href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\contact\contatoForm.php">Contato</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\devolution\devolution.php">Trocas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\aboutUs\aboutUs.php">Sobre
+                                nós</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\user\login.php">Login</a>

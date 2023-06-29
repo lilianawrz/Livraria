@@ -3,15 +3,18 @@ include "../../models/BD.class.php";
 
 class UsuarioController
 {
+
     private $model;
     private $table = "usuario";
+
     public function __construct()
     {
         $this->model = new BD();
     }
 
-    public function inserir($dados)
+    public function salvar($dados)
     {
+
         try {
 
             if (!preg_match("/^[a-zA-Z-' ]*$/", $dados['nome'])) {
@@ -21,6 +24,8 @@ class UsuarioController
             if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
                 throw new Exception(" Formato de e-mail inválido. ");
             }
+            // var_dump($dados);
+            //exit;
             if ($dados['senha'] === $dados['c_senha']) {
 
                 $dados['senha'] = password_hash($dados['senha'], PASSWORD_BCRYPT);
@@ -29,45 +34,36 @@ class UsuarioController
                 $this->model->inserir($this->table, $dados);
 
                 $_SESSION['url'] = "login.php";
-                $_SESSION['msg'] = "Registro salvo com sucesso";
+                $_SESSION['msg'] = "Registro Salvo com sucesso!";
             } else {
-                throw new Exception(" As senhas devem se coincidirem!");
+                throw new Exception(" As senhas devem coincidirem");
             }
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
             $_SESSION['url'] = 'RegistrarUsuarioForm.php';
             $_SESSION['msg'] = $e->getMessage();
+
         }
     }
+
     public function logar($dados)
     {
         try {
+
             $usuario = $this->model->login($this->table, $dados);
             if ($usuario) {
-
-                $_SESSION['url'] = "main.php";
+                $_SESSION['url'] = "views\home\home.php";
                 $_SESSION['nome'] = $usuario->nome;
-            } else {
-                throw new Exception(" Login ou senha está errado. Tente novamente.");
             }
             $_SESSION['login'] = $dados['login'];
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = 'login.php';
+            $_SESSION['url'] = "http://" . $_SERVER['HTTP_HOST'] . '\views\user\login.php';
             $_SESSION['msg'] = $e->getMessage();
-        }
-    }
 
-    public function verificarLogin()
-    {
-        if (empty($_SESSION['nome'])) {
-            session_start();
-            session_destroy();
-            header("Location: ../view/login.php");
         }
     }
 
 }
-?>

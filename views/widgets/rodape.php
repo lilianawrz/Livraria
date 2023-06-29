@@ -1,4 +1,7 @@
 <footer class="container" style="bottom:0">
+    <?php
+    $dirName = "/Livraria";
+    ?>
     <div class="row">
         <div class="col-md-4">
             <ul class="nav">
@@ -7,10 +10,12 @@
                         Conosco</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link"
+                        href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\contact\contatoForm.php">Contato</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="empresa.html">Sobre
+                    <a class="nav-link"
+                        href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\aboutUs\aboutUs.php">Sobre
                         nós</a>
                 </li>
             </ul>
