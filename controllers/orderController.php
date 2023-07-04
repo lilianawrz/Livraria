@@ -62,7 +62,7 @@ class OrderController
     }
     public function buscar($id)
     {
-        $this->model->buscar($this->table, $id);
+        return $this->model->buscar($this->table, $id);
     }
 
 }

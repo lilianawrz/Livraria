@@ -52,19 +52,11 @@ class BD
     {
         $id = $dados['id'];
         $conn = $this->conn();
-        $sql = "UPDATE $nome_tabela SET";
+        $sql = "UPDATE $nome_tabela SET ";
         $flag = 0;
         $arrayDados = [];
         foreach ($dados as $campo => $valor) {
-            $sql .= $flag == 0 ? "$campo=?" : ", $campo=?";
-
-
-            /*  if ($flag == 0) {
-                  $sql .= " $campo=?";
-              } else {
-                  $sql .= ", $campo=? ";
-              } */
-
+            $sql .= $flag == 0 ? " $campo=? " : ", $campo=? ";
 
             $flag = 1;
             $arrayDados[] = $valor;
@@ -75,6 +67,7 @@ class BD
         $st = $conn->prepare($sql);
         $st->execute($arrayDados);
     }
+
 
     public function select($nome_tabela)
     {
@@ -125,7 +118,7 @@ class BD
     public function login($nome_tabela, $dados)
     {
         $conn = $this->conn();
-        $sql = "SELECT * FROM usuario WHERE login=? ;";
+        $sql = "SELECT * FROM $nome_tabela WHERE login=? ;";
         $st = $conn->prepare($sql);
         $st->execute([$dados['login']]);
 
@@ -134,7 +127,7 @@ class BD
         if (password_verify($dados['senha'], $result->senha)) {
             return $result;
         } else {
-            return throw new Exception("error");
+            return throw new Exception(" O login ou senha esta errado. Por favor tente novamente.");
         }
     }
 }

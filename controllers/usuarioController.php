@@ -12,7 +12,7 @@ class UsuarioController
         $this->model = new BD();
     }
 
-    public function salvar($dados)
+    public function inserir($dados)
     {
 
         try {
@@ -53,14 +53,14 @@ class UsuarioController
 
             $usuario = $this->model->login($this->table, $dados);
             if ($usuario) {
-                $_SESSION['url'] = "views\home\home.php";
+                $_SESSION['url'] = "widgets/main.php";
                 $_SESSION['nome'] = $usuario->nome;
             }
             $_SESSION['login'] = $dados['login'];
 
         } catch (Exception $e) {
             $_SESSION['dados'] = $dados;
-            $_SESSION['url'] = "http://" . $_SERVER['HTTP_HOST'] . '\views\user\login.php';
+            $_SESSION['url'] = "http://" . $_SERVER['HTTP_HOST'] . '/Livraria/views/user/login.php';
             $_SESSION['msg'] = $e->getMessage();
 
         }

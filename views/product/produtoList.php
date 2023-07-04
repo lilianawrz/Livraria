@@ -6,14 +6,11 @@ $produto = new ProdutoController();
 
 if (!empty($_GET['id'])) {
     $produto->deletar($_GET['id']);
-    header("location: " . $_SESSION['url']);
+    header("location: produtoList.php ");
+    $_SESSION["msg"] = "Registro deletado com sucesso!";
 }
 
-if (!empty($_POST)) {
-    $load = $produto->pesquisar($_POST);
-} else {
-    $load = $produto->select();
-}
+$load = (!empty($_POST)) ? $produto->pesquisar($_POST) : $produto->select();
 
 ?>
 

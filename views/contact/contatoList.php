@@ -3,8 +3,7 @@ include "../../controllers/contatoController.php";
 include "../widgets/header.php";
 
 session_start();
-
-//verificarLogin();
+Util::verificarLogin();
 
 $contato = new ContatoController();
 

@@ -38,10 +38,6 @@ class ProdutoController
                 throw new Exception(" Somente letras e espaços em branco são permitidos. ");
             }
 
-            if (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
-                throw new Exception(" Formato de e-mail inválido. ");
-            }
-
             $this->model->atualizar($this->table, $dados);
 
             $_SESSION['url'] = "produtoList.php";
@@ -67,7 +63,7 @@ class ProdutoController
     }
     public function buscar($id)
     {
-        $this->model->buscar($this->table, $id);
+        return $this->model->buscar($this->table, $id);
     }
 
 }
