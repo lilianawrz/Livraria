@@ -1,6 +1,5 @@
 <?php
 include "../../models/BD.class.php";
-
 class ProdutoController
 {
     private $model;

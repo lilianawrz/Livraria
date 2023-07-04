@@ -6,7 +6,7 @@ class Util
         if (empty($_SESSION['nome'])) {
             session_start();
             session_destroy();
-            header("Location: http://" . $_SERVER['HTTP_HOST'] . "/views/user/login.php");
+            header("Location: http://" . $_SERVER['HTTP_HOST'] . "/Livraria/views/user/login.php");
         }
     }
 }

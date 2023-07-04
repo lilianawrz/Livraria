@@ -1,7 +1,7 @@
 <?php
 include "../../controllers/contatoController.php";
 include "../widgets/header.php";
-
+include "../../Util.php";
 session_start();
 Util::verificarLogin();
 

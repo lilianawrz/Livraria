@@ -1,5 +1,6 @@
 <?php
 include "../widgets/header.php";
+include "../../Util.php";
 Util::verificarLogin();
 //var_dump($_SESSION);
 //exit;
