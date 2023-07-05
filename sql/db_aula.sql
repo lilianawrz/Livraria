@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `produto` (
 -- Copiando dados para a tabela db_aula.produto: ~2 rows (aproximadamente)
 REPLACE INTO `produto` (`id`, `nome`, `imagem`, `quantidade`, `preco`, `descricao`) VALUES
 	(1, ' A verdade sobre o caso Harry Quebert', _binary 0x44657369676e2073656d206e6f6d65202831292e706e67, 1, 20, ' Mistério'),
-	(5, 'Harry Quebert', _binary 0x6861727279512e6a7067, 1, 25, 'O mundo vai acabar em um sábado. No próximo sábado, para falar a verdade. Pouco antes da hora do jantar.');
+	(5, 'Good Omens', _binary '', 1, 25, 'O mundo vai acabar em um sábado. No próximo sábado, para falar a verdade. Pouco antes da hora do jantar.');
 
 -- Copiando estrutura para tabela db_aula.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -57,14 +57,19 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `login` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `senha` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `login` (`login`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Copiando dados para a tabela db_aula.usuario: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela db_aula.usuario: ~7 rows (aproximadamente)
 REPLACE INTO `usuario` (`id`, `nome`, `telefone`, `email`, `login`, `senha`) VALUES
-	(1, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', 'admin', '1234'),
-	(30, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', NULL, NULL),
-	(31, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', 'admin', '$2y$10$y2ZlkDjnuZaJH8BH.Y5jOOVTYbXj3FWfehfYXzZCuA5rTz5GkJ8fW');
+	(1, 'Liliana', '49999714294', 'lilianawrzesinski@gmail.com', 'admin', '1234'),
+	(34, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', NULL, NULL),
+	(35, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', NULL, NULL),
+	(36, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', NULL, NULL),
+	(37, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', 'lili', '123'),
+	(38, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', 'admina', '$2y$10$bZwLG/nw3OoeqawQXfBxLeGHjG3MpkegfLzEmkEG5aD4M9PW9bWNK'),
+	(39, 'Liliana Wrzesinski', '49999714294', 'lilianawrzesinski@gmail.com', 'adminb', '$2y$10$7Ev9CUkUbR.lfmMsqaZb0ualQ6nZ2bIFDT1kQXdUQgqiBAZgohPm6');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
