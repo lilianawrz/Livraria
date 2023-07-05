@@ -53,7 +53,7 @@ class UsuarioController
 
             $usuario = $this->model->login($this->table, $dados);
             if ($usuario) {
-                $_SESSION['url'] = "/Livraria/views/widgets/main.php";
+                $_SESSION['url'] = "/Livraria/views/home/home.php";
                 $_SESSION['nome'] = $usuario->nome;
             }
             $_SESSION['login'] = $dados['login'];
