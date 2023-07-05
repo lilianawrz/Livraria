@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm p-2">
             <div class="card" style="width: 200px">
-                <img src="views\img\narnia.jpg" class="card-img-top" alt="..." height="250px">
+                <img src="<?php echo $host ?>views\img\narnia.jpg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">As crônicas de Narnia</h6>
                     <p class="card-text">Nos últimos cinqüenta anos, 'As
@@ -18,7 +18,7 @@
         </div>
         <div class="col-sm p-2">
             <div class="card" style="width: 200px">
-                <img src="views\img\goodOmens.jpeg" class="card-img-top" alt="..." height="250px">
+                <img src="<?php echo $host ?>views\img\goodOmens.jpeg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">Good Omens: Belas Maldições</h6>
                     <p class="card-text">O mundo vai acabar em um sábado. No
@@ -30,7 +30,7 @@
         </div>
         <div class="col-sm p-2">
             <div class="card" style="width:200px">
-                <img src="views\img\harryQuebert.jpeg" class="card-img-top" alt="..." height="250px">
+                <img src="<?php echo $host ?>views\img\harryQuebert.jpeg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">A verdade sobre o caso Harry
                         Quebert</h6>
@@ -43,7 +43,7 @@
         </div>
         <div class="col-sm p-2">
             <div class="card" style="width: 200px">
-                <img src="views\img\homemDeSorte.jpg" class="card-img-top" alt="..." height="250px">
+                <img src="<?php echo $host ?>views\img\homemDeSorte.jpg" class="card-img-top" alt="..." height="250px">
                 <div class="card-body">
                     <h6 class="card-title">Um homem de sorte</h6>
                     <p class="card-text">“Mas não estava em outra época e

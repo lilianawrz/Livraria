@@ -37,7 +37,7 @@ include_once dirname(__FILE__, 3) . "\Util.php";
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
-                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\index.php">Home</a>
+                                href="<?php echo "http://" . $_SERVER['SERVER_NAME'] . $dirName ?>\views\home\home.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
