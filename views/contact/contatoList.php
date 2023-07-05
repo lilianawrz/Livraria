@@ -1,8 +1,6 @@
 <?php
 include "../../controllers/contatoController.php";
 include "../widgets/header.php";
-include "../../Util.php";
-session_start();
 Util::verificarLogin();
 
 $contato = new ContatoController();
@@ -31,13 +29,6 @@ if (!empty($_GET['msg']) || $_SESSION['msg'] == 0) {
     <div class="row g-3">
         <div class="col-md-10 p-4">
             <div style="padding-top: 10px">
-
-                <p>
-                    Olá
-                    <?php echo $_SESSION['nome'] ?>, seja bem vindo! <a class="btn btn-warning"
-                        href="view/user/login.php?sair=1" role="button"> Sair </a>
-                </p>
-                <br>
                 <h3>Listagem Contatos</h3>
                 <form action="contatoList.php" method="post" class="form-inline">
                     <div class="row">

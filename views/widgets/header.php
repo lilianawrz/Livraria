@@ -1,4 +1,6 @@
-<?php $host = 'http://localhost/Livraria/'; ?>
+<?php $host = 'http://localhost/Livraria/';
+include_once dirname(__FILE__, 3) . "\Util.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +16,14 @@
 </head>
 
 <body>
-
     <?php
     $dirName = "/Livraria";
+    session_start();
+    $login = !empty($_SESSION['nome']) ? $_SESSION['login'] : "";
+    //$url_projeto = "http://" . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) . DIRECTORY_SEPARATOR; //pega o host com o diretorio do projeto
+    $url_projeto = "http://" . $_SERVER['HTTP_HOST'] . DIRECTORY_SEPARATOR; //pega o host do projeto
     ?>
+
     <header>
         <nav class="navbar navbar-expand-lg bg-body-yellow" id="nav">
             <div class="container-fluid">
@@ -65,6 +71,7 @@
                 </div>
             </div>
         </nav>
+
     </header>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"

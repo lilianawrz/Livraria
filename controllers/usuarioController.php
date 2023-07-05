@@ -12,7 +12,7 @@ class UsuarioController
         $this->model = new BD();
     }
 
-    public function salvar($dados)
+    public function inserir($dados)
     {
 
         try {
@@ -51,9 +51,9 @@ class UsuarioController
     {
         try {
 
-             $usuario = $this->model->login($this->table, $dados);
+            $usuario = $this->model->login($this->table, $dados);
             if ($usuario) {
-                $_SESSION['url'] = "/views/widgets/main.php";
+                $_SESSION['url'] = "/Livraria/views/widgets/main.php";
                 $_SESSION['nome'] = $usuario->nome;
             }
             $_SESSION['login'] = $dados['login'];

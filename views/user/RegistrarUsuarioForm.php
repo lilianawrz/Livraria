@@ -1,6 +1,5 @@
 <?php
 include '../../controllers/usuarioController.php';
-include "../widgets/header.php";
 session_start();
 $login = new UsuarioController();
 
@@ -14,6 +13,18 @@ if (!empty($_POST)) {
 $dados = !empty($_SESSION['dados']) ? $_SESSION['dados'] : "";
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="<?php echo $host ?>views/css/style.css">
+    <link rel="shortcut icon" href="<?php echo $host ?>views/img/icon.png" type="image/x-icon">
+    <title>Rilian livraria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+</head>
 <main class="container">
     <div class="row g-3">
         <div class="col-md-10 p-4">
@@ -59,6 +70,6 @@ $dados = !empty($_SESSION['dados']) ? $_SESSION['dados'] : "";
         </div>
     </div>
 </main>
-
-<?php
-include "../widgets/rodape.php" ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>

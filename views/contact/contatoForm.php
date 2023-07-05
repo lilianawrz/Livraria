@@ -1,7 +1,6 @@
 <?php
 include '../../controllers/contatoController.php';
 include '../widgets/header.php';
-session_start();
 $contato = new ContatoController();
 
 if (!empty($_POST)) {

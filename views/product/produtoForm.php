@@ -1,7 +1,7 @@
 <?php
 include '../../controllers/produtoController.php';
 include "../widgets/header.php";
-session_start();
+Util::verificarLogin();
 $produto = new ProdutoController();
 
 if (!empty($_POST)) {

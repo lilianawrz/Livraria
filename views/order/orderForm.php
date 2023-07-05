@@ -1,7 +1,7 @@
 <?php
 include '../../controllers/orderController.php';
 include "../widgets/header.php";
-session_start();
+Util::verificarLogin();
 $pedido = new OrderController();
 
 if (!empty($_POST)) {
